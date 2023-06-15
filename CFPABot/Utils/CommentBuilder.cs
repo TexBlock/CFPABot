@@ -219,7 +219,7 @@ namespace CFPABot.Utils
                         /* Mod Name */ $" [**{addon.Name.Trim().Replace("[","\\[").Replace("]", "\\]").Replace("|", "\\|")}**]({addon.Links.WebsiteUrl}) |" +
                         // /* Mod ID   */ $" {await CurseManager.GetModID(addon, versions.FirstOrDefault(), enforcedLang: true)} |" + // 这里应该enforce吗？
                         /* Source   */ $" {CurseManager.GetRepoText(addon)} \\|" +
-                        /* Mcmod    */ $" [🟩 MCMOD](https://www.baidu.com/s?wd=site:mcmod.cn%20{HttpUtility.UrlEncode(addon.Name)}) \\|" +
+                        /* Mcmod    */ $" [MCMOD](https://www.baidu.com/s?wd=site:mcmod.cn%20{HttpUtility.UrlEncode(addon.Name)}) \\|" +
                         /* Compare  */ $" [:file_folder: 对比](https://cfpa.cyan.cafe/Compare/PR/{PullRequestID}/{addon.Slug}/{await CurseManager.GetModID(addon, versions.FirstOrDefault(), true, false)}) |" +
                         /* Mod DL   */ $" {CurseManager.GetDownloadsText(addon, versions)}{await CurseManager.GetModRepoLinkText(addon, infos)} |" +
                         ""
@@ -248,7 +248,7 @@ namespace CFPABot.Utils
                                         /* Mod Name */ $" 依赖-[*{depAddon.Name.Replace("[", "\\[").Replace("]", "\\]")}*]({depAddon.Links.WebsiteUrl}) |" +
                                         // /* Mod ID   */ $" \\* |" +
                                         /* Source   */ $" {CurseManager.GetRepoText(addonModel)} \\|" +
-                                        /* Mcmod    */ $" [🟩MCMOD](https://www.baidu.com/s?wd=site:mcmod.cn%20{HttpUtility.UrlEncode(depAddon.Name)}) \\|" +
+                                        /* Mcmod    */ $" [MCMOD](https://www.baidu.com/s?wd=site:mcmod.cn%20{HttpUtility.UrlEncode(depAddon.Name)}) \\|" +
                                         /* Compare  */ $" &nbsp;&nbsp;* |" +
                                         /* Mod DL   */ $" {CurseManager.GetDownloadsText(depAddon, versions)} |" +
                                         ""
