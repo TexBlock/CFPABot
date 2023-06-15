@@ -11,9 +11,9 @@ namespace CFPABot.Utils
     {
 #if Test
 
-        public const string BaseRepo = "https://github.com/Cyl18/Test";
-        public const string Owner = "Cyl18";
-        public const string RepoName = "Test";
+        public const string BaseRepo = "https://github.com/TexBlock/Test";
+        public const string Owner = "TexBlock";
+        public const string RepoName = "next";
 
         public static string GitHubOAuthToken => Environment.GetEnvironmentVariable("GITHUB_OAUTH_TOKEN");
         public static string GitHubWebhookSecret => Environment.GetEnvironmentVariable("GITHUB_WEBHOOK_SECRET");

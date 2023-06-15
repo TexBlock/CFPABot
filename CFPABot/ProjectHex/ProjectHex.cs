@@ -40,8 +40,8 @@ namespace CFPABot.ProjectHex
             try
             {
                 RunGitCommand("clone https://github.com/CFPAOrg/Minecraft-Mod-Language-Package.git .");
-                RunGitCommand("config user.email cyl18a@gmail.com");
-                RunGitCommand("config user.name Cyl18");
+                RunGitCommand("config user.email 2206114068@qq.com");
+                RunGitCommand("config user.name TexTrue");
 
                 RunGitCommand("checkout -b some-rannnnnndom-name");
                 var sw = Stopwatch.StartNew();

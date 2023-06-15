@@ -91,7 +91,7 @@ namespace CFPABot.Utils
             {
                 logger.Debug("获取 PR Comment...");
                 var comments = await GitHub.GetPRComments(PullRequestID);
-                comment = comments.FirstOrDefault(c => (c.User.Login == "Cyl18-Bot" || c.User.Login.Equals("cfpa-bot[bot]", StringComparison.OrdinalIgnoreCase)) && c.Body.StartsWith("<!--CYBOT-->"))
+                comment = comments.FirstOrDefault(c => (c.User.Login == "Cyl18-Bot" || c.User.Login.Equals("bocchi-bot[bot]", StringComparison.OrdinalIgnoreCase)) && c.Body.StartsWith("<!--CYBOT-->"))
                           ?? await CreateComment();
             }
 

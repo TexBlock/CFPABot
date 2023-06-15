@@ -23,7 +23,7 @@ namespace CFPABot.Utils
 
         static GitHubClient GetClientPersonal()
         {
-            return new GitHubClient(new ProductHeaderValue("cfpa-bot"))
+            return new GitHubClient(new ProductHeaderValue("bocchi-bot"))
             {
                 Credentials = new Credentials(Constants.GitHubOAuthToken)
             };
@@ -51,7 +51,7 @@ namespace CFPABot.Utils
 
         static void UpdateClient()
         {
-            var installationClient = new GitHubClient(new ProductHeaderValue("cfpa-bot"))
+            var installationClient = new GitHubClient(new ProductHeaderValue("bocchi-bot"))
             {
                 Credentials = new Credentials(GetToken())
             };
@@ -63,7 +63,7 @@ namespace CFPABot.Utils
         public static string GetToken()
         {
             var generator = new GitHubJwt.GitHubJwtFactory(
-                new GitHubJwt.FilePrivateKeySource("/app/config/cfpa-bot.pem"),
+                new GitHubJwt.FilePrivateKeySource("/app/config/bocchi-bot.pem"),
                 new GitHubJwt.GitHubJwtFactoryOptions
                 {
                     AppIntegrationId = 181747, // The GitHub App Id
@@ -72,7 +72,7 @@ namespace CFPABot.Utils
             );
 
             var jwtToken = generator.CreateEncodedJwtToken();
-            var i = new GitHubClient(new ProductHeaderValue("cfpa-bot"));
+            var i = new GitHubClient(new ProductHeaderValue("bocchi-bot"));
             i.Credentials = new Credentials(jwtToken, AuthenticationType.Bearer);
             var response = i.GitHubApps.CreateInstallationToken(24218080).Result;
 
@@ -133,7 +133,7 @@ namespace CFPABot.Utils
         {
             Log.Information($"批准 run: {runID}");
             var hc = new HttpClient();
-            hc.DefaultRequestHeaders.Add("User-Agent", "cfpa-bot");
+            hc.DefaultRequestHeaders.Add("User-Agent", "bocchi-bot");
             hc.DefaultRequestHeaders.Add("Authorization", $"bearer {GetToken()}");
 
             await hc.PostAsync($"https://api.github.com/repos/{Constants.Owner}/{Constants.RepoName}/actions/runs/{runID}/approve", new StringContent(""));

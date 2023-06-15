@@ -33,12 +33,16 @@ namespace CFPABot.DiffEngine
                     "1.12.2" => MinecraftVersion.v1_12,
                     "1.16" or "1.16-fabric" => MinecraftVersion.v1_16,
                     "1.18" or "1.18-fabric" => MinecraftVersion.v1_18,
+                    "1.19" => MinecraftVersion.v1_19,
+                    "1.20" => MinecraftVersion.v1_20
                     _ => throw new ArgumentOutOfRangeException()
                 },
                 ModLoader = gameVersionDirectory switch
                 {
                     "1.12.2" or "1.16" or "1.18" => ModLoader.Forge,
                     "1.16-fabric" or "1.18-fabric" => ModLoader.Fabric,
+                    "1.19" => ModLoader.Forge_Fabric
+                    "1.20" => ModLoader.Forge_Fabric
                     _ => throw new ArgumentOutOfRangeException()
                 }
             };
@@ -95,6 +99,13 @@ namespace CFPABot.DiffEngine
                     {
                         MinecraftVersion.v1_16 => "1.16-fabric",
                         MinecraftVersion.v1_18 => "1.18-fabric",
+                        _ => throw new ArgumentOutOfRangeException(nameof(minecraftVersion), minecraftVersion, null)
+                    };
+                case ModLoader.Forge_Fabric:
+                    return minecraftVersion switch
+                    {
+                        MinecraftVersion.v1_19 => "1.19",
+                        MinecraftVersion.v1_20 => "1.20",
                         _ => throw new ArgumentOutOfRangeException(nameof(minecraftVersion), minecraftVersion, null)
                     };
             }
@@ -256,13 +267,17 @@ namespace CFPABot.DiffEngine
     public enum ModLoader
     {
         Forge,
-        Fabric
+        Fabric,
+
+        Forge_Fabric
     }
 
     public enum MinecraftVersion
     {
         v1_12,
         v1_16,
-        v1_18
+        v1_18,
+        v1_19,
+        v1_20
     }
 }

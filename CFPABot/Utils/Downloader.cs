@@ -23,13 +23,13 @@ namespace CFPABot.Utils
         {
             hc = new();
             chc = new();
-            hc.DefaultRequestHeaders.Add("User-Agent", "cfpa-bot");
+            hc.DefaultRequestHeaders.Add("User-Agent", "bocchi-bot");
         }
 
         public static async Task<T> GitHubAPIJson<T>(string url)
         {
             var jsonhc = new HttpClient();
-            jsonhc.DefaultRequestHeaders.Add("User-Agent", "cfpa-bot");
+            jsonhc.DefaultRequestHeaders.Add("User-Agent", "bocchi-bot");
             jsonhc.DefaultRequestHeaders.Add("Authorization", $"bearer {GitHub.GetToken()}");
             return (await jsonhc.GetStringAsync(url)).JsonDeserialize<T>();
         }
@@ -47,7 +47,7 @@ namespace CFPABot.Utils
                 else
                 {
                     var hc1 = new HttpClient();
-                    hc1.DefaultRequestHeaders.Add("User-Agent", "cfpa-bot");
+                    hc1.DefaultRequestHeaders.Add("User-Agent", "bocchi-bot");
                     hc1.DefaultRequestHeaders.Add("Authorization", $"bearer {GitHub.GetToken()}");
                     return (await hc1.GetStringAsync(url));
                 }
