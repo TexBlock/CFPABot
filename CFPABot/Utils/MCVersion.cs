@@ -29,7 +29,7 @@ namespace CFPABot.Utils
                 MCVersion.v116fabric => "1.16-fabric",
                 MCVersion.v118fabric => "1.18-fabric",
                 MCVersion.v119 => "1.19",
-                MCVersion.v120 => "1.20"
+                MCVersion.v120 => "1.20",
                 _ => throw new ArgumentOutOfRangeException(nameof(version), version, null)
             };
         }
@@ -44,7 +44,7 @@ namespace CFPABot.Utils
                 MCVersion.v116fabric => "1.16",
                 MCVersion.v118fabric => "1.18",
                 MCVersion.v119 => "1.19",
-                MCVersion.v120 => "1.20"
+                MCVersion.v120 => "1.20",
                 _ => throw new ArgumentOutOfRangeException(nameof(version), version, null)
             };
         }
@@ -59,7 +59,7 @@ namespace CFPABot.Utils
                 "1.16-fabric" => MCVersion.v116fabric,
                 "1.18-fabric" => MCVersion.v118fabric,
                 "1.19" => MCVersion.v119,
-                "1.20" => MCVersion.v120
+                "1.20" => MCVersion.v120,
                 _ => throw new ArgumentOutOfRangeException(nameof(version), version, null)
             };
         }
@@ -73,7 +73,7 @@ namespace CFPABot.Utils
                 "1.16-fabric" => MCVersion.v116,
                 "1.18-fabric" => MCVersion.v118,
                 "1.19" => MCVersion.v119,
-                "1.20" => MCVersion.v120
+                "1.20" => MCVersion.v120,
                 _ => throw new ArgumentOutOfRangeException(nameof(version), version, null)
             };
         }
